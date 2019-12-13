@@ -1,0 +1,25 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::gls"
+msgid "GLS"
+msgstr "GLS"
+
+msgctxt "Addons::description::gls"
+msgid "GLS Shipping Carrier"
+msgstr "GLS Shipping Carrier"
+
+msgctxt "Languages::carrier_gls"
+msgid "GLS"
+msgstr "GLS"
+
+msgctxt "Languages::ship_gls_client_number"
+msgid "GLS Client number"
+msgstr "GLS Client number"
+
+msgctxt "Languages::print_gls_packing_slip"
+msgid "Print GLS packing slip"
+msgstr "Print GLS packing slip"

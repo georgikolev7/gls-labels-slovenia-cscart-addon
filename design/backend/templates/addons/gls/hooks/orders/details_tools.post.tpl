@@ -1,0 +1,1 @@
+<li>{btn type="list" text=__("print_gls_packing_slip") href="gls.print_packing_slip?order_id=`$order_info.order_id`&format=pdf" class="cm-new-window"}</li>
