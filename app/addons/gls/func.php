@@ -2,6 +2,7 @@
 
 use Tygh\Registry;
 use Tygh\Settings;
+use Tygh\Pdf;
 
 if (!defined('BOOTSTRAP')) {
     die('Access denied');
@@ -45,18 +46,18 @@ function fn_gls_print_packing_slip($order_id)
         'consig_contact' => '',
         'consig_phone' => $order_info['b_phone'],
         'consig_email' => $order_info['email'],
-        'services' => '',
+        'pcount' => 1,
+        'pickupdate' => date('Y-m-d'),
         'content' => '',
         'clientref' => '',
         'codamount' => $order_info['total'],
         'codref' => '',
-        'hash' => 'nohash',
+        'services' => '',
         'printertemplate' => 'A6',
-        'customlabel' => false,
         'printit' => true,
-        'timestamp' => strtotime('now'),
-        'pcount' => 1,
-        'pickupdate' => date('Y-m-d')
+        'timestamp' => date('YmdHis', strtotime('now')),
+        'hash' => 'nohash',
+        'customlabel' => false
     );
         
     $args['hash'] = fn_gls_get_hash($args);
@@ -69,9 +70,8 @@ function fn_gls_print_packing_slip($order_id)
         return false;
     }
     
-    $html = base64_decode($response['pdfdata']);
-    
-    Pdf::render($html, __('packing_slip') . '-' . $order_id);
+    header('Content-type: application/pdf');
+	die(base64_decode($response['pdfdata']));
 }
 
 function fn_gls_get_hash($data) 
