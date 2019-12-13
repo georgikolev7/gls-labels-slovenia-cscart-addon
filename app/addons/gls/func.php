@@ -66,6 +66,7 @@ function fn_gls_print_packing_slip($order_id)
     
     if (!isset($response['successfull'])) {
         print_r($response);
+        return false;
     }
     
     $html = base64_decode($response['pdfdata']);
